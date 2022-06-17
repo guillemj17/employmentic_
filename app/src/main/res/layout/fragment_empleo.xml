@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".editables.EmpleoFragment"
+    android:backgroundTint="@color/white"
+    android:background="@color/white">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent" >
+
+           <androidx.cardview.widget.CardView
+               android:id="@+id/cardViewEmpleo"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               app:cardCornerRadius="@android:dimen/app_icon_size"
+               android:layout_margin="20dp"
+               android:layout_alignParentTop="true"
+               android:layout_alignParentStart="true"
+               android:layout_alignParentEnd="true"
+               >
+
+               <ImageView
+                   android:id="@+id/imagenEmpresaEmpleo"
+                   android:layout_width="match_parent"
+                   android:layout_height="200dp"
+                   android:layout_alignParentStart="true"
+                   android:layout_alignParentTop="true"
+
+                   android:layout_alignParentEnd="true"
+
+                   android:scaleType="center"
+                   android:src="@drawable/ucjc"
+                   />
+           </androidx.cardview.widget.CardView>
+
+           <TextView
+               android:id="@+id/nombreEmpleo"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Programador Java"
+               android:layout_below="@id/cardViewEmpleo"
+               android:textAlignment="center"
+               android:textSize="25dp"
+               android:textStyle="bold"
+               />
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/ubicacionEmpleo"
+               android:layout_below="@id/nombreEmpleo"
+               app:cardCornerRadius="4dp"
+               android:backgroundTint="@color/grey"
+               android:layout_marginRight="20dp"
+               android:layout_marginLeft="20dp"
+               android:layout_marginTop="20dp"
+               >
+
+               <RelativeLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:padding="2dp" >
+
+                   <TextView
+                       android:id="@+id/tv_ubicacionEmpleo"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:drawableLeft="@drawable/ic_ubicacion"
+                       android:drawablePadding="10dp"
+                       android:text="Madrid"
+                       android:textSize="20dp" />
+               </RelativeLayout>
+           </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/estudiosEmpleo"
+               android:layout_below="@id/ubicacionEmpleo"
+               app:cardCornerRadius="4dp"
+               android:backgroundTint="@color/grey"
+               android:layout_marginRight="20dp"
+               android:layout_marginLeft="20dp"
+               android:layout_marginTop="20dp"
+
+               >
+
+               <RelativeLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:padding="2dp" >
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:text="Ciclo Formativo de Grado Superior"
+                       android:drawableLeft="@drawable/ic_libro"
+                       android:drawablePadding="10dp"
+                       android:textSize="20dp"
+                       android:id="@+id/tv_experienciaEmpleo"
+                       />
+               </RelativeLayout>
+           </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/modalidadEmpleo"
+               android:layout_below="@id/estudiosEmpleo"
+               app:cardCornerRadius="4dp"
+               android:backgroundTint="@color/grey"
+               android:layout_marginRight="20dp"
+               android:layout_marginLeft="20dp"
+               android:layout_marginTop="20dp"
+
+               >
+
+               <RelativeLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:padding="2dp" >
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:text="Presencial"
+                       android:drawableLeft="@drawable/ic_casa"
+                       android:drawablePadding="10dp"
+                       android:textSize="20dp"
+                       android:id="@+id/tv_modalidadEmpleo"
+                       />
+               </RelativeLayout>
+           </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/salarioEmpleo"
+               android:layout_below="@id/modalidadEmpleo"
+               app:cardCornerRadius="4dp"
+               android:backgroundTint="@color/grey"
+               android:layout_marginRight="20dp"
+               android:layout_marginLeft="20dp"
+               android:layout_marginTop="20dp"
+
+               >
+
+               <RelativeLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:padding="2dp" >
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:text="28.000 - 30.000 € anuales"
+                       android:drawableLeft="@drawable/ic_dolar"
+                       android:drawablePadding="10dp"
+                       android:textSize="20dp"
+                       android:id="@+id/tv_salarioEmpleo"
+                       />
+               </RelativeLayout>
+           </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/jornadaEmpleo"
+               android:layout_below="@id/salarioEmpleo"
+               app:cardCornerRadius="4dp"
+               android:backgroundTint="@color/grey"
+               android:layout_marginRight="20dp"
+               android:layout_marginLeft="20dp"
+               android:layout_marginTop="20dp"
+
+               >
+
+               <RelativeLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:padding="2dp" >
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:text="Jornada completa"
+                       android:drawableLeft="@drawable/ic_reloj"
+                       android:drawablePadding="10dp"
+                       android:textSize="20dp"
+                       android:id="@+id/tv_jornadaEmpleo"
+                       />
+               </RelativeLayout>
+           </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/conocimientosEmpleo"
+               android:layout_below="@id/jornadaEmpleo"
+               app:cardCornerRadius="4dp"
+               android:backgroundTint="@color/grey"
+               android:layout_marginRight="20dp"
+               android:layout_marginLeft="20dp"
+               android:layout_marginTop="20dp"
+
+               >
+
+               <RelativeLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:padding="2dp" >
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:text="Java, Spring, Git, Python, SQL, Firebase, HTML, CSS, Javascript"
+                       android:drawableLeft="@drawable/ic_profile"
+                       android:drawablePadding="10dp"
+                       android:textSize="20dp"
+                       android:id="@+id/tv_conocimientosEmpleo"
+                       />
+               </RelativeLayout>
+           </androidx.cardview.widget.CardView>
+           <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+               android:id="@+id/btn_inscribirse"
+               style="@style/loginButton"
+               android:layout_gravity="center_horizontal"
+               android:layout_marginTop="@dimen/loginViewsMargin"
+               android:text="Inscribirse"
+               android:layout_below="@id/conocimientosEmpleo"
+               android:gravity="center"
+               android:layout_alignParentEnd="true"
+               android:layout_alignParentStart="true"
+               android:layout_margin="30dp"
+               />
+       </RelativeLayout>
+    </ScrollView>
+</FrameLayout>

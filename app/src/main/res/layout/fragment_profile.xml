@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".fragments.ProfileFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/foto_perfil"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="30dp"
+                android:padding="1dp"
+                android:src="@drawable/fotodeperfil" />
+
+            <TextView
+                android:id="@+id/nombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/foto_perfil"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/rounded_corner"
+                android:padding="10dp"
+                android:text="Guillermo Moreno Jiménez"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:backgroundTint="@color/grey"/>
+
+            <TextView
+                android:id="@+id/datos_acceso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nombre"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:text="Datos de acceso: " />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_datos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/datos_acceso"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="4dp"
+                android:backgroundTint="@color/grey"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:id="@+id/tv_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/user_icon"
+                        android:drawablePadding="5dp"
+                        android:text="E-mail: "
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/tv_emailuser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_email"
+                        android:padding="4dp"
+                        android:text="guillermomj2002@gmail.com"
+                        android:textSize="18dp"
+                        android:layout_marginLeft="22dp"
+
+                        />
+
+                    <ImageButton
+                        android:id="@+id/edit_email"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/edit_icon"
+                        />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+
+                android:layout_marginTop="15dp"
+                android:id="@+id/cv_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cv_datos"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="4dp"
+                android:backgroundTint="@color/grey"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:id="@+id/tv_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/pwd_icon"
+                        android:drawablePadding="5dp"
+                        android:text="Contraseña: "
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/tv_astersicos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_password"
+                        android:padding="4dp"
+                        android:text="******************"
+                        android:textSize="18dp"
+                        android:layout_marginLeft="23dp"
+
+                        />
+
+                    <ImageButton
+                        android:id="@+id/edit_password"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/edit_icon" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="15dp"
+                android:id="@+id/cv_tlf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cv_pwd"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="4dp"
+                android:backgroundTint="@color/grey"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:id="@+id/tv_tlf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/tlf_icon"
+                        android:drawablePadding="5dp"
+                        android:text="Número de teléfono: "
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/tv_tlfuser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_tlf"
+                        android:layout_marginLeft="23dp"
+                        android:padding="4dp"
+                        android:text="633362885"
+                        android:textSize="18dp"
+
+                        />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="15dp"
+                android:id="@+id/cv_dni"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cv_tlf"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="4dp"
+                android:backgroundTint="@color/grey"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:id="@+id/tv_dni"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/dni_icon"
+                        android:drawablePadding="5dp"
+                        android:text="Documento de identidad: "
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/tv_dniuser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_dni"
+                        android:layout_marginLeft="23dp"
+                        android:padding="4dp"
+                        android:text="49451585K"
+                        android:textSize="18dp"
+
+                        />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="15dp"
+                android:id="@+id/cv_curriculum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cv_dni"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="4dp"
+                android:backgroundTint="@color/grey"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:id="@+id/tv_cv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/cv_icon"
+                        android:drawablePadding="5dp"
+                        android:text="Curriculum Vitae: "
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/tv_cvuser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_cv"
+                        android:layout_marginLeft="23dp"
+                        android:padding="4dp"
+                        android:text="----------"
+                        android:textSize="18dp"
+
+                        />
+
+                    <ImageButton
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/edit_icon" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cv_curriculum"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="17dp"
+                android:layout_marginBottom="13dp"
+                android:src="@drawable/plus_icon" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_empresa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cv_curriculum"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="74dp"
+                android:layout_toStartOf="@+id/fab_button"
+                android:clickable="true"
+                android:src="@drawable/ic_empresa"
+                android:visibility="invisible" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_help"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cv_curriculum"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="25dp"
+                android:layout_toStartOf="@+id/fab_empresa"
+                android:clickable="true"
+                android:src="@drawable/ic_help"
+                android:visibility="invisible"
+                />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_vacante"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cv_curriculum"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="25dp"
+                android:layout_toStartOf="@+id/fab_help"
+                android:clickable="true"
+                android:src="@drawable/ic_addperson"
+                android:visibility="invisible"
+                />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</FrameLayout>
