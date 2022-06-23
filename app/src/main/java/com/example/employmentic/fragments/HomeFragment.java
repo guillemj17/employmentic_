@@ -65,6 +65,7 @@ public class HomeFragment extends Fragment{
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerview_empresas);
 
 
+
         MyDB = new MyDataBaseHelper(getContext());
         id_vacante = new ArrayList<>();
         nombre_vacante = new ArrayList<>();

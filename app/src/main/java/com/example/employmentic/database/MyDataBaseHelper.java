@@ -14,7 +14,7 @@ public class MyDataBaseHelper extends SQLiteOpenHelper {
 
     private Context context;
     private static final String DATABASE_NAME = "bbdd1.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
 
     private static final String TABLE_NAME = "vacante";
     private static final String COLUMN_ID = "_id";
@@ -26,7 +26,7 @@ public class MyDataBaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_SALARIO = "salario";
     private static final String COLUMN_JORNADA = "jornada";
     private static final String COLUMN_CONOCIMIENTOS = "conocimientos";
-
+    private static final String COLUMN_GUARDADO = "guardado";
 
 
     public MyDataBaseHelper(@Nullable Context context) {
@@ -45,7 +45,8 @@ public class MyDataBaseHelper extends SQLiteOpenHelper {
                 COLUMN_MODALIDAD + " TEXT, " +
                 COLUMN_SALARIO + " TEXT, " +
                 COLUMN_JORNADA + " TEXT, " +
-                COLUMN_CONOCIMIENTOS + " TEXT);";
+                COLUMN_CONOCIMIENTOS + " TEXT, " +
+                COLUMN_GUARDADO + " TEXT);";
 
         sqLiteDatabase.execSQL(query);
     }
@@ -67,7 +68,30 @@ public class MyDataBaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    public void guardar(String nombre, String nombreEmpresa,String ubicacion, String estudios, String modalidad, String salario, String jornada, String conocimientos) {
+    public Cursor consultarFav(){
+
+        String query = " SELECT * FROM " + TABLE_NAME + " where ubicacion = 'Madrid' ";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
+    }
+
+    public Cursor cambiarEstado() {
+
+        String query = " UPDATE " + TABLE_NAME + " SET guardado = 1 WHERE _id = " + COLUMN_ID;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.rawQuery(query, null);
+        }
+
+        return cursor;
+    }
+
+    public void guardar(String nombre, String nombreEmpresa, String ubicacion, String estudios, String modalidad, String salario, String jornada, String conocimientos, Integer guardado) {
 
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -80,6 +104,8 @@ public class MyDataBaseHelper extends SQLiteOpenHelper {
         valores.put(COLUMN_SALARIO, salario);
         valores.put(COLUMN_JORNADA, jornada);
         valores.put(COLUMN_CONOCIMIENTOS, conocimientos);
+        valores.put(COLUMN_GUARDADO, guardado);
+
 
         db.insert(TABLE_NAME, null, valores);
 

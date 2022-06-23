@@ -3,6 +3,7 @@ package com.example.employmentic;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CompoundButton;
@@ -23,6 +24,7 @@ public class MenuPrincipalActivity extends AppCompatActivity implements View.OnC
 
     ImageButton btn_edit_email;
     ToggleButton favButton;
+    String email_ejemplo = "12345";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,13 @@ public class MenuPrincipalActivity extends AppCompatActivity implements View.OnC
         bottomNavigation.add(new MeowBottomNavigation.Model(1, R.drawable.ic_fav));
         bottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.ic_home));
         bottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.ic_profile));
+
+        Bundle bundle = new Bundle();
+        bundle.putString("message", "From Activity");
+
+        // Set Fragmentclass Arguments
+        ProfileFragment email = new ProfileFragment();
+        email.setArguments(bundle);
 
         bottomNavigation.setOnShowListener(new MeowBottomNavigation.ShowListener() {
             @Override
@@ -80,10 +89,6 @@ public class MenuPrincipalActivity extends AppCompatActivity implements View.OnC
             @Override
             public void onReselectItem(MeowBottomNavigation.Model item) {
 
-                //Display toast
-                Toast.makeText(getApplicationContext()
-                        , "You reselected " + item.getId()
-                        ,Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -104,12 +109,6 @@ public class MenuPrincipalActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onClick(View view) {
-
-        /*
-        if (view.getId() == R.id.edit_email) {
-
-            getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new HomeFragment()).commit();
-        } */
 
 
     }

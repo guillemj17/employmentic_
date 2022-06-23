@@ -41,7 +41,7 @@
                         style="@style/viewParent.headerText.NoMode"
                         android:layout_alignParentLeft="true"
                         android:layout_centerVertical="true"
-                        android:text="Already \nhave an \nAccount?"/>
+                        android:text="¿Ya \ntienes una \ncuenta?"/>
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

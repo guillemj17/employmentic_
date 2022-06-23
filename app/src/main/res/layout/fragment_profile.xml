@@ -23,7 +23,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="30dp"
                 android:padding="1dp"
-                android:src="@drawable/fotodeperfil" />
+                android:src="@drawable/ucjc" />
 
             <TextView
                 android:id="@+id/nombre"
@@ -35,7 +35,7 @@
                 android:layout_marginRight="30dp"
                 android:background="@drawable/rounded_corner"
                 android:padding="10dp"
-                android:text="Guillermo Moreno Jiménez"
+                android:text="UCJC"
                 android:textAlignment="center"
                 android:textSize="20dp"
                 android:textStyle="bold"
@@ -82,7 +82,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tv_email"
                         android:padding="4dp"
-                        android:text="guillermomj2002@gmail.com"
+                        android:text="ucjc@ucjc.com"
                         android:textSize="18dp"
                         android:layout_marginLeft="22dp"
 
@@ -188,7 +188,7 @@
                         android:layout_below="@+id/tv_tlf"
                         android:layout_marginLeft="23dp"
                         android:padding="4dp"
-                        android:text="633362885"
+                        android:text="918153131"
                         android:textSize="18dp"
 
                         />
@@ -260,19 +260,19 @@
                         android:id="@+id/tv_cv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/cv_icon"
+                        android:drawableLeft="@drawable/ic_web"
                         android:drawablePadding="5dp"
-                        android:text="Curriculum Vitae: "
+                        android:text="Web:"
                         android:textSize="18dp" />
 
                     <TextView
-                        android:id="@+id/tv_cvuser"
+                        android:id="@+id/tv_web"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tv_cv"
                         android:layout_marginLeft="23dp"
                         android:padding="4dp"
-                        android:text="----------"
+                        android:text="www.ucjc.edu"
                         android:textSize="18dp"
 
                         />

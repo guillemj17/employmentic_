@@ -21,6 +21,7 @@ public class VacanteFragment extends Fragment {
     EditText et_nombre, et_ubicacion, et_estudios, et_modalidad,
     et_salario, et_jornada, et_conocimientos, et_nombre_empresa;
     Button btn_registrar;
+    Integer guardado = 0;
 
     public VacanteFragment() {
 
@@ -59,13 +60,13 @@ public class VacanteFragment extends Fragment {
 
                 MyDataBaseHelper MyDB = new MyDataBaseHelper(getContext());
                 MyDB.guardar(et_nombre.getText().toString(),
-                        et_nombre.getText().toString(),
+                        et_nombre_empresa.getText().toString(),
                         et_ubicacion.getText().toString(),
                         et_estudios.getText().toString(),
                         et_modalidad.getText().toString(),
                         et_salario.getText().toString(),
                         et_jornada.getText().toString(),
-                        et_conocimientos.getText().toString());
+                        et_conocimientos.getText().toString(), guardado);
             }
         });
 

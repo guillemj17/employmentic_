@@ -6,7 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -25,6 +27,10 @@ public class ProfileFragment extends Fragment {
 
     FloatingActionButton fab, fab1, fab2, fab3;
     Animation fabOpen, fabClose, rotateForward, rotateBackward;
+    TextView et_email;
+    TextView et_pass;
+    TextView et_web;
+    String email = "ucjc@ucjc.com";
 
     boolean isOpen = false;
 
@@ -53,6 +59,14 @@ public class ProfileFragment extends Fragment {
                 container, false);
         ImageButton edit_password_button = (ImageButton) view.findViewById(R.id.edit_password);
         ImageButton edit_email_button = (ImageButton) view.findViewById(R.id.edit_email);
+
+        // EditText
+        et_email = (TextView) view.findViewById(R.id.tv_emailuser);
+        et_pass = (TextView) view.findViewById(R.id.tv_astersicos);
+        et_web = (TextView) view.findViewById(R.id.tv_web);
+
+        et_email.setText(email);
+
 
         // FAB
         fab = (FloatingActionButton) view.findViewById(R.id.fab_button);
@@ -103,6 +117,8 @@ public class ProfileFragment extends Fragment {
 
                     transaction.replace(R.id.frame_layout, changeEmailFragment);
                     transaction.addToBackStack(null);
+
+                    email = "ucjc2@ucjc.com";
 
                     transaction.commit();
 
@@ -207,6 +223,7 @@ public class ProfileFragment extends Fragment {
                 }
             }
         });
+
         return view;
     }
 

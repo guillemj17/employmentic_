@@ -17,7 +17,7 @@
             />
 
         <EditText
-            android:id="@+id/et_pass1"
+            android:id="@+id/et_email1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -29,10 +29,10 @@
 
 
         <EditText
-            android:id="@+id/et_pass2"
+            android:id="@+id/et_email2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/et_pass1"
+            android:layout_below="@+id/et_email1"
             android:layout_margin="20dp"
             android:hint="Repetir email nuevo"
 
@@ -44,7 +44,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/loginViewsMargin"
             android:text="Cambiar email"
-            android:layout_below="@id/et_pass2"
+            android:layout_below="@id/et_email2"
             android:gravity="center"
             android:layout_alignParentEnd="true"
             android:layout_alignParentStart="true"

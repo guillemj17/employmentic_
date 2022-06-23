@@ -1,31 +1,30 @@
 package com.example.employmentic;
 
 import android.content.Context;
-import android.content.Intent;
+import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.CompoundButton;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatImageView;
-import androidx.fragment.app.FragmentActivity;
+import androidx.browser.customtabs.CustomTabsService;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.employmentic.database.MyDataBaseHelper;
 import com.example.employmentic.editables.EmpleoFragment;
-import com.example.employmentic.fragments.HomeFragment;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
 
     private ArrayList id_vacante, nombre_vacante, nombreEmpresa_vacante,ubicacion_vacante, estudios_vacante, modalidad_vacante, salario_vacante, jornada_vacante, conocimientos_vacante;;
     private Context context;
+    MyDataBaseHelper MyDB;
 
     public CustomAdapter(Context context, ArrayList<String> id_vacante, ArrayList<String> nombre_vacante, ArrayList<String> nombreEmpresa_vacante,ArrayList<String> ubicacion_vacante,
                          ArrayList<String> estudios_vacante, ArrayList<String> modalidad_vacante, ArrayList<String> salario_vacante,
@@ -70,6 +69,21 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
             }
         });
+
+        holder.favButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if (isChecked) {
+
+
+                    Toast.makeText(buttonView.getContext(), "Guardado!",
+                            Toast.LENGTH_LONG).show();
+
+                }
+
+            }
+        });
     }
 
 
@@ -83,6 +97,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         TextView id_vacante_textview, nombre_vacante_textview, nombreEmpresa_vacante_textview,
                 ubicacion_vacante_textview, estudios_vacante_textview, modalidad_vacante_textview,
                 salario_vacante_textview, jornada_vacante_textview, conocimientos_vacante_textview;
+        ToggleButton favButton;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -90,6 +105,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             nombre_vacante_textview = itemView.findViewById(R.id.tv_nombreVacante);
             nombreEmpresa_vacante_textview = itemView.findViewById(R.id.tv_nombreEmpresa);
             ubicacion_vacante_textview = itemView.findViewById(R.id.ubicacionEmpresa);
+            favButton = itemView.findViewById(R.id.favButton);
 
         }
     }
